@@ -1,6 +1,10 @@
 <script>
+  import Hero from '$lib/components/sections/Hero.svelte';
   import '../app.css';
+  import AppHeader from '../lib/components/AppHeader.svelte';
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<AppHeader />
+<main>
+  <Hero />
+</main>
