@@ -9,8 +9,10 @@
 
   import '../app.css';
   import AppFooter from '$lib/components/AppFooter.svelte';
+  import AppGridBackground from '$lib/components/AppGridBackground.svelte';
 </script>
 
+<AppGridBackground />
 <AppHeader />
 <main>
   <Hero />

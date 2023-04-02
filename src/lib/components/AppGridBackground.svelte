@@ -1,11 +1,33 @@
-<div class="fixed top-0 left-0 w-full h-full overflow-hidden bg-grid" />
+<div class="w-[100vw] h-[100vh] fixed top-0 left-0 text-ui-gray-darker -z-10">
+  <svg class="lines-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    {#each Array(10) as _, i}
+      <path d="M 0 {(i + 1) * 200} H 1920" stroke="currentColor" stroke-width="1" fill="none" />
+    {/each}
+    {#each Array(10) as _, k}
+      <path d="M {(k + 1) * 200} 0 V 1080" stroke="currentColor" stroke-width="1" fill="none" />
+    {/each}
+  </svg>
+</div>
 
 <style>
-  .bg-grid {
-    background-color: #0e121e;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
-    background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px;
-    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  .lines-svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: draw 2s linear forwards;
+    z-index: -1;
+  }
+
+  /* Анимация рисования линий */
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Анимация рисования линии */
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
 </style>
