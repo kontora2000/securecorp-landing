@@ -5,6 +5,8 @@
   import Stats from '$lib/components/sections/Stats.svelte';
   import Services from '$lib/components/sections/Services.svelte';
   import Consult from '$lib/components/sections/Consult.svelte';
+  import Contacts from '$lib/components/sections/Contacts.svelte';
+
   import '../app.css';
 </script>
 
@@ -15,4 +17,5 @@
   <Clients />
   <Services />
   <Consult />
+  <Contacts />
 </main>

@@ -6,11 +6,12 @@
   export let disabled: boolean = false;
   export let className: string = '';
 
-  $: classes = `inline-flex items-center justify-center border border-transparent font-medium focus:outline-none px-8 py-6 uppercase border-2
+  $: classes = `inline-flex items-center justify-center font-medium focus:outline-none px-8 py-6 uppercase border-2 
       ${rounded ? ' rounded-full' : ''}
       ${disabled ? ' opacity-50 cursor-not-allowed' : ''}
-      ${variant === 'normal' ? ` bg-${color} active:${color}-darker hover:${color}-darker` : ''}
-      ${variant === 'outlined' ? ` text-gray-700 border-${color} bg-transparent` : ''} ${className}`;
+      ${variant === 'normal' ? ` text-white bg-${color} active:${color}-darker hover:${color}-darker ` : ''}
+      ${variant === 'outlined' ? ` text-${color} border-${color} border-2 bg-transparent ` : 'border-transparent'} 
+      ${className}`;
 </script>
 
 <button {type} {disabled} class={classes}>

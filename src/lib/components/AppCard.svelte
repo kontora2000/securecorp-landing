@@ -1,12 +1,14 @@
 <script lang="ts">
   export let className: string = '';
+  export let clickable: boolean = false;
+
   $: classes = `
     rounded-md 
     p-4 
     transition-colors
     duration-200 
     ease-in-out 
-    cursor-pointer
+    ${clickable ? 'cursor-pointer' : 'cursor-default'}
   ${className}`;
 </script>
 

@@ -2,7 +2,7 @@
   import AppCard from '$lib/components/AppCard.svelte';
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
-  import Bullet from '../icons/Bullet.svelte';
+  import Bullet from '$lib/components/icons/Bullet.svelte';
 
   interface Feature {
     title: string;
@@ -10,6 +10,7 @@
   }
 
   export let features: Feature[] = [
+    { title: 'Анализ и решение вопросов, связанных с безопасностью предприятия' },
     { title: 'Комплексная или выборочная проверка контрагентов' },
     {
       title:
@@ -40,36 +41,28 @@
 
 <AppSection id="services">
   <AppContainer>
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-      <div class="col-span-2 md:col-span-3 lg:col-span-3">
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="col-span-2 md:col-span-2 lg:col-span-3">
         <h1 class="block md:max-w-[700px] text-[32px]">
           В процесс сопровождения клиента входит более 17 услуг различной направленности, в&nbsp;числе которых:
         </h1>
       </div>
-      <div>
-        <AppCard className="ml-auto">
-          <slot name="header">
-            <Bullet />
-          </slot>
-          <div class="text-md mt-4 leading-6 max-w-[288px]">
-            Анализ и решение вопросов, связанных с безопасностью предприятия
-          </div>
-        </AppCard>
-      </div>
       {#each features as feature}
-        <AppCard>
-          <slot name="header">
-            <Bullet />
-          </slot>
-          <h3 class="text-md mt-4 leading-6 max-w-[288px]">
-            {feature.title}
-          </h3>
-          <p slot="footer" class="mt-4 text-[#E3E8EE99] font-thin leading-5">
-            {#if feature.description}
-              {feature.description}
-            {/if}
-          </p>
-        </AppCard>
+        <article>
+          <AppCard>
+            <slot name="header">
+              <Bullet />
+            </slot>
+            <h3 class="text-md mt-4 leading-6 max-w-[288px]">
+              {feature.title}
+            </h3>
+            <p slot="footer" class="mt-4 text-[#E3E8EE99] font-thin leading-5 hidden md:block">
+              {#if feature.description}
+                {feature.description}
+              {/if}
+            </p>
+          </AppCard>
+        </article>
       {/each}
     </div>
   </AppContainer>

@@ -1,9 +1,11 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { smoothScroll, toggleOverflow } from '$lib/utils/dom';
+  import { phone } from '$lib/contacts/phone';
 
   import AppLogo from '$lib/components/AppLogo.svelte';
   import AppContainer from '$lib/components/AppContainer.svelte';
+  import AppButton from './AppButton.svelte';
 
   interface Link {
     name: string;
@@ -38,17 +40,17 @@
   };
 </script>
 
-<header class="bg-black">
+<header>
   <AppContainer>
     <div class="flex items-center py-6 md:justify-start md:space-x-10">
-      <a href="/" class="mr-[70px] text-base">
+      <a href="/" class="mr-[70px] text-white">
         <AppLogo />
       </a>
       <nav class="hidden md:flex space-x-10">
         {#each links as link}
           <a
             href={link.href}
-            class="text-base font-medium text-white hover:text-ui-blue transition-colors"
+            class="font-medium text-white hover:text-ui-blue transition-colors"
             on:click={handleMenuLinkClick}
           >
             {link.name}
@@ -56,14 +58,14 @@
         {/each}
       </nav>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0 transition-colors">
-        <a href="tel:+1234567890" class="whitespace-nowrap text-base font-medium hover:text-ui-blue">
-          +7 (999) 999-99-99
+        <a href={`tel:${phone}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
+          {phone}
         </a>
       </div>
       {#if !isMenuOpen}
         <div class="md:hidden ml-auto">
           <button
-            class="text-base hover:text-ui-blue focus:outline-none"
+            class="text-white hover:text-ui-blue focus:outline-none"
             aria-label="Открыть меню"
             on:click={toggleMenu}
           >
@@ -102,6 +104,9 @@
           </a>
         {/each}
       </nav>
+      <AppButton color="black" className="w-full text-black relative bottom-0" variant="outlined">
+        Получить консультацию
+      </AppButton>
     </AppContainer>
   {/if}
 </header>
