@@ -48,7 +48,7 @@
         {#each links as link}
           <a
             href={link.href}
-            class="text-base font-medium text-white hover:text-blue-500 transition-colors"
+            class="text-base font-medium text-white hover:text-ui-blue transition-colors"
             on:click={handleMenuLinkClick}
           >
             {link.name}
@@ -56,14 +56,14 @@
         {/each}
       </nav>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0 transition-colors">
-        <a href="tel:+1234567890" class="whitespace-nowrap text-base font-medium hover:text-blue-500">
+        <a href="tel:+1234567890" class="whitespace-nowrap text-base font-medium hover:text-ui-blue">
           +7 (999) 999-99-99
         </a>
       </div>
       {#if !isMenuOpen}
         <div class="md:hidden ml-auto">
           <button
-            class="text-base hover:text-blue-500 focus:outline-none"
+            class="text-base hover:text-ui-blue focus:outline-none"
             aria-label="Открыть меню"
             on:click={toggleMenu}
           >
@@ -85,7 +85,7 @@
         <a href="/" class="mr-[70px]">
           <AppLogo />
         </a>
-        <button class="text-black hover:text-blue-500 focus:outline-none" on:click={toggleMenu}>
+        <button class="text-black hover:text-ui-blue focus:outline-none" on:click={toggleMenu}>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -95,7 +95,7 @@
         {#each links as link}
           <a
             href={link.href}
-            class="text-black font-mediu hover:text-blue-500 transition-colors mt-3"
+            class="text-black font-mediu hover:text-ui-blue transition-colors mt-3"
             on:click={handleMenuLinkClick}
           >
             {link.name}

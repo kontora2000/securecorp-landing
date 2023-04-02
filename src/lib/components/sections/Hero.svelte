@@ -38,7 +38,7 @@
         </div>
         <AppButton
           variant="outlined"
-          className="hover:bg-blue-500 active:bg-blue-500 hover:border-blue-500 w-full md:w-auto"
+          className="hover:bg-ui-blue active:bg-ui-blue hover:border-ui-blue w-full md:w-auto"
         >
           Получить консультацию
         </AppButton>

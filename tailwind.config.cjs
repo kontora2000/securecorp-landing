@@ -5,10 +5,13 @@ module.exports = {
     colors: {},
     extend: {
       colors: {
-        white: '#fff',
-        black: '#0E121E',
         base: '#fff',
-        'blue-500': '#0B99FE'
+        'ui-blue': '#0B99FE',
+        'ui-dark-blue': '#07184C',
+        'ui-red': '#FE450B',
+        'ui-grey': '#E3E8EE',
+        'ui-grey-dark': '#18222E',
+        'ui-black': '#0E121E'
       }
     }
   },

@@ -27,7 +27,7 @@
       </div>
       <div class="flex flex-col justify-start max-w-full md:max-w-[436px] md:ml-36 mt-8 md:mt-0">
         {#each cards as card}
-          <AppCard className="hover:bg-blue-500 text-center md:text-left last-child:mb-0 mb-12">
+          <AppCard className="hover:bg-ui-blue text-center md:text-left last-child:mb-0 mb-12">
             <h2 slot="header" class="text-6xl md:text-[80px] font-bold">{card.title}</h2>
             <div class="font-bold text-base md:text-lg" slot="default">{card.content}</div>
           </AppCard>

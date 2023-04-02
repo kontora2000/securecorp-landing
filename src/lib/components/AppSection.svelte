@@ -1,3 +1,3 @@
-<section {...$$props} class="py-[200px] text-white bg-grid">
+<section {...$$props} class="py-[200px] text-white">
   <slot />
 </section>

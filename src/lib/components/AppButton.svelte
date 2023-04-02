@@ -8,8 +8,8 @@
 
   $: classes = `inline-flex items-center justify-center border border-transparent font-medium focus:outline-none px-8 py-6 uppercase border-2
       ${rounded ? ' rounded-full' : ''}
-      ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-80 active:opacity-100 transition-opacity'}
-      ${variant === 'normal' ? ` text-white ${color} hover:${color}-dark active:${color}-darker bg-opacity-90` : ''}
+      ${disabled ? ' opacity-50 cursor-not-allowed' : ''}
+      ${variant === 'normal' ? ` bg-${color} active:${color}-darker hover:${color}-darker` : ''}
       ${variant === 'outlined' ? ` text-gray-700 border-${color} bg-transparent` : ''} ${className}`;
 </script>
 
