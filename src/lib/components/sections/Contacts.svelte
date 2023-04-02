@@ -1,7 +1,7 @@
 <script>
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
-  import { phone, email, address } from '$lib/contacts/phone';
+  import { phone, email, address } from '$lib/constants/contacts';
 </script>
 
 <AppSection>

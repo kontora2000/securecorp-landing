@@ -8,6 +8,7 @@
   import Contacts from '$lib/components/sections/Contacts.svelte';
 
   import '../app.css';
+  import AppFooter from '$lib/components/AppFooter.svelte';
 </script>
 
 <AppHeader />
@@ -19,3 +20,4 @@
   <Consult />
   <Contacts />
 </main>
+<AppFooter />

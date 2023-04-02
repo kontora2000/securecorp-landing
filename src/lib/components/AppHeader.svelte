@@ -1,7 +1,7 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { smoothScroll, toggleOverflow } from '$lib/utils/dom';
-  import { phone } from '$lib/contacts/phone';
+  import { phone } from '$lib/constants/contacts';
 
   import AppLogo from '$lib/components/AppLogo.svelte';
   import AppContainer from '$lib/components/AppContainer.svelte';
