@@ -1,6 +1,7 @@
 <script>
   import AppContainer from '$lib/components/AppContainer.svelte';
-  import AppButton from '../AppButton.svelte';
+  import AppButton from '$lib/components/AppButton.svelte';
+  import AppSection from '$lib/components/AppSection.svelte';
 
   let features = [
     'Экономическую безопасность',
@@ -10,7 +11,7 @@
   ];
 </script>
 
-<section>
+<AppSection id="hero">
   <AppContainer className={'flex'}>
     <div class="flex flex-col py-16 md:py-24 text-base">
       <div class="flex-1 w-50 max-w-[600px]">
@@ -38,9 +39,10 @@
         <AppButton
           variant="outlined"
           className="hover:bg-blue-500 active:bg-blue-500 hover:border-blue-500 w-full md:w-auto"
-          >Получить консультацию</AppButton
         >
+          Получить консультацию
+        </AppButton>
       </div>
     </div>
   </AppContainer>
-</section>
+</AppSection>

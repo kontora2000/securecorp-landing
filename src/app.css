@@ -7,3 +7,9 @@ html {
   font-family: 'Manrope';
   scroll-behavior: smooth;
 }
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.2rem !important;
+}
