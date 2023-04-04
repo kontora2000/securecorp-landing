@@ -2,6 +2,8 @@
   import AppCard from '$lib/components/AppCard.svelte';
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
+  import type { BallStyle } from '$lib/types/BallStyle';
+  import { getContext } from 'svelte';
 
   interface StatsCard {
     title: string;
@@ -17,9 +19,11 @@
         'Вероятность предотвращения рисков и угроз, возникающих в процессе экономической и финансово-хозяйственной деятельности предприятия'
     }
   ];
+
+  const sectionsBallProps = getContext('BallProps') as Record<string, BallStyle>;
 </script>
 
-<AppSection id="tasks">
+<AppSection id="tasks" ballProps={sectionsBallProps.stats}>
   <AppContainer>
     <div class="flex flex-col md:flex-row text-white">
       <h1 class="md:font-bold text-2xl md:text-[32px] shrink-1 md:leading-10 md:max-w-[400px]">

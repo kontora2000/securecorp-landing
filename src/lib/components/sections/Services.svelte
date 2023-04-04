@@ -3,6 +3,8 @@
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
   import Bullet from '$lib/components/icons/Bullet.svelte';
+  import type { BallStyle } from '$lib/types/BallStyle';
+  import { getContext } from 'svelte';
 
   interface Feature {
     title: string;
@@ -37,9 +39,11 @@
       title: 'Проведение служебных проверок по фактам выявленных нарушений и злоупотреблений'
     }
   ];
+
+  const sectionsBallProps = getContext('BallProps') as Record<string, BallStyle>;
 </script>
 
-<AppSection id="services">
+<AppSection id="services" ballProps={sectionsBallProps.services}>
   <AppContainer>
     <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="col-span-2 md:col-span-2 lg:col-span-3">

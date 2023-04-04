@@ -1,10 +1,15 @@
-<script>
+<script lang="ts">
+  import type { BallStyle } from '$lib/types/BallStyle';
+  import { phone, email, address } from '$lib/constants/contacts';
+  import { getContext } from 'svelte';
+
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
-  import { phone, email, address } from '$lib/constants/contacts';
+
+  const sectionsBallProps = getContext('BallProps') as Record<string, BallStyle>;
 </script>
 
-<AppSection>
+<AppSection ballProps={sectionsBallProps.contacts} id="contacts">
   <AppContainer>
     <div class="flex flex-col md:flex-row justify-between text-white">
       <h1 class="shrink-1 mb-8 md:mb-0">Контактная информация</h1>
