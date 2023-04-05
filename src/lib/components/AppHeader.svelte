@@ -1,9 +1,11 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { smoothScroll, toggleOverflow } from '$lib/utils/dom';
+  import { phone } from '$lib/constants/contacts';
 
   import AppLogo from '$lib/components/AppLogo.svelte';
   import AppContainer from '$lib/components/AppContainer.svelte';
+  import AppButton from './AppButton.svelte';
 
   interface Link {
     name: string;
@@ -38,17 +40,17 @@
   };
 </script>
 
-<header class="bg-black">
+<header>
   <AppContainer>
     <div class="flex items-center py-6 md:justify-start md:space-x-10">
-      <a href="/" class="mr-[70px] text-base">
+      <a href="/" class="mr-[70px] text-white">
         <AppLogo />
       </a>
       <nav class="hidden md:flex space-x-10">
         {#each links as link}
           <a
             href={link.href}
-            class="text-base font-medium text-white hover:text-blue-500 transition-colors"
+            class="font-medium text-white hover:text-ui-blue transition-colors"
             on:click={handleMenuLinkClick}
           >
             {link.name}
@@ -56,14 +58,14 @@
         {/each}
       </nav>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0 transition-colors">
-        <a href="tel:+1234567890" class="whitespace-nowrap text-base font-medium hover:text-blue-500">
-          +7 (999) 999-99-99
+        <a href={`tel:${phone}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
+          {phone}
         </a>
       </div>
       {#if !isMenuOpen}
         <div class="md:hidden ml-auto">
           <button
-            class="text-base hover:text-blue-500 focus:outline-none"
+            class="text-white hover:text-ui-blue focus:outline-none"
             aria-label="Открыть меню"
             on:click={toggleMenu}
           >
@@ -85,7 +87,7 @@
         <a href="/" class="mr-[70px]">
           <AppLogo />
         </a>
-        <button class="text-black hover:text-blue-500 focus:outline-none" on:click={toggleMenu}>
+        <button class="text-black hover:text-ui-blue focus:outline-none" on:click={toggleMenu}>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -95,13 +97,16 @@
         {#each links as link}
           <a
             href={link.href}
-            class="text-black font-mediu hover:text-blue-500 transition-colors mt-3"
+            class="text-black font-mediu hover:text-ui-blue transition-colors mt-3"
             on:click={handleMenuLinkClick}
           >
             {link.name}
           </a>
         {/each}
       </nav>
+      <AppButton color="black" className="w-full text-black relative bottom-0" variant="outlined">
+        Получить консультацию
+      </AppButton>
     </AppContainer>
   {/if}
 </header>
