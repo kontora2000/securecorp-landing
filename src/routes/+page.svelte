@@ -1,18 +1,20 @@
 <script lang="ts">
   import { setContext } from 'svelte';
 
+  import type { BallStyle } from '$lib/types/BallStyle';
+
   import AppHeader from '$lib/components/AppHeader.svelte';
   import Clients from '$lib/components/sections/Clients.svelte';
   import Hero from '$lib/components/sections/Hero.svelte';
   import Stats from '$lib/components/sections/Stats.svelte';
-  import Services from '$lib/components/sections/Services.svelte';
   import Consult from '$lib/components/sections/Consult.svelte';
   import Contacts from '$lib/components/sections/Contacts.svelte';
   import AppFooter from '$lib/components/AppFooter.svelte';
   import AppGridBackground from '$lib/components/AppGridBackground.svelte';
   import AppFloatingBall from '$lib/components/AppFloatingBall.svelte';
+
   import '../app.css';
-  import type { BallStyle } from '$lib/types/BallStyle';
+  import Features from '$lib/components/sections/Features.svelte';
 
   export const ssr = false;
 
@@ -49,7 +51,7 @@
   <Hero />
   <Stats />
   <Clients />
-  <Services />
+  <Features />
   <Consult />
   <Contacts />
 </main>

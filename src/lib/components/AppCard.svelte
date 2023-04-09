@@ -2,12 +2,15 @@
   export let className: string = '';
   export let clickable: boolean = false;
 
+  export let variant: 'normal' | 'outlined' = 'normal';
+
   $: classes = `
-    rounded-md 
+    rounded-2xl 
     p-4 
     transition-colors
     duration-200 
     ease-in-out 
+    ${variant === 'outlined' ? 'border-2 border-white hover:border-transparent' : ''}
     ${clickable ? 'cursor-pointer' : 'cursor-default'}
   ${className}`;
 </script>

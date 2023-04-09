@@ -10,7 +10,8 @@ module.exports = {
         'ui-grey': '#E3E8EE',
         'ui-gray-dark': 'rgba(255, 255, 255, 0.32)',
         'ui-gray-darker': '#18222E',
-        'ui-black': '#0E121E'
+        'ui-black': '#0E121E',
+        'ui-green': '#01B171'
       }
     }
   },

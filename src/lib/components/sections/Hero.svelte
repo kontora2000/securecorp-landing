@@ -2,7 +2,7 @@
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppButton from '$lib/components/AppButton.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
-  import Bullet from '../icons/Bullet.svelte';
+  import Bullet from '../icons/BulletIcon.svelte';
 
   let features = [
     'Экономическую безопасность',

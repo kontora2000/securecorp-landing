@@ -2,18 +2,24 @@
   import AppCard from '$lib/components/AppCard.svelte';
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
-  import Bullet from '$lib/components/icons/Bullet.svelte';
+  import Bullet from '$lib/components/icons/BulletIcon.svelte';
   import type { BallStyle } from '$lib/types/BallStyle';
   import { getContext } from 'svelte';
 
   interface Feature {
     title: string;
     description?: string;
+    higlighted?: boolean;
   }
 
   export let features: Feature[] = [
+    {
+      title: 'Комплексная или выборочная проверка контрагентов',
+      description:
+        'Проверерим финансовое состояние, репутацию, правовую и налоговую историю, судебные разбирательства и другие факторы',
+      higlighted: true
+    },
     { title: 'Анализ и решение вопросов, связанных с безопасностью предприятия' },
-    { title: 'Комплексная или выборочная проверка контрагентов' },
     {
       title:
         'Формирование системы своевременного получения информации о признаках внешних угроз экономическим интересам предприятия'
@@ -23,7 +29,7 @@
       title:
         'Анализ и проверка чистоты взаимоотношений со штатными сотрудниками предприятия (скрытая коммерческая мотивация, промышленный шпионаж)',
       description:
-        'Анализ их благонадёжности, фин. документации, кредитной истории, отзывов, установление учредителей, бенефициаров, аффилированных лиц.'
+        'Проанализируем их благонадёжности, фин. документации, кредитной истории, отзывов, установление учредителей, бенефициаров, аффилированных лиц.'
     },
     {
       title: 'Взаимодействие с правоохранительными и государственными органами по вопросам защиты интересов предприятия'
@@ -53,7 +59,7 @@
       </div>
       {#each features as feature}
         <article>
-          <AppCard>
+          <AppCard variant={feature.higlighted ? 'outlined' : 'normal'} className="hover:bg-ui-blue card">
             <slot name="header">
               <Bullet />
             </slot>
