@@ -32,7 +32,7 @@
     },
 
     contacts: {
-      left: 'calc(50% - 200px)',
+      left: 'calc(50% - 25vw)',
       bottom: '0',
       background: 'radial-gradient(47.03% 49.47% at 56.72% 63.26%, #FE0B1A 0%, #FE0B45 100%)',
       scale: '0.8'

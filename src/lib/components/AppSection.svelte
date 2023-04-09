@@ -27,7 +27,7 @@
       },
       onLeaveBack: () => {
         ballTween.reverse();
-      }
+      },
     });
   });
 </script>
