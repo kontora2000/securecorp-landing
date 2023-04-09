@@ -15,10 +15,10 @@
 <AppSection id="hero">
   <AppContainer className={'flex'}>
     <div class="flex flex-col py-16 md:py-24 text-white">
-      <div class="flex-1 w-50 max-w-[600px]">
-        <h1 class="text-[24px] leading-tight md:text-5xl text-white mb-12 md:leading-[48px]">
-          <strong>Комплексная безопасность&nbsp;предприятия.</strong>
-          <div>Берём на себя:</div>
+      <div class="flex-1 w-50 max-w-[700px]">
+        <h1 class="text-[24px] leading-tight md:text-5xl text-white mb-12 md:leading-[48px] w-100 font-normal">
+          <strong class="font-bold">Комплексная безопасность предприятия. </strong>
+          &nbsp;Берём&nbsp;на&nbsp;себя
         </h1>
         <div class="flex flex-col gap-4 md:grid md:grid-cols-2 mb-8 md:gap-y-16 md:gap-x-3">
           {#each features as feature}
@@ -33,7 +33,7 @@
           color="white"
           className="hover:bg-ui-blue active:bg-ui-blue hover:border-ui-blue w-full md:w-auto"
         >
-          Получить консультацию
+          Проконсультироваться
         </AppButton>
       </div>
     </div>

@@ -4,12 +4,13 @@
   import AppSection from '$lib/components/AppSection.svelte';
   import Bullet from '$lib/components/icons/BulletIcon.svelte';
   import type { BallStyle } from '$lib/types/BallStyle';
+  import type { CardAccent } from '$lib/types/CardVariant';
   import { getContext } from 'svelte';
 
   interface Feature {
     title: string;
     description?: string;
-    higlighted?: boolean;
+    accent?: number;
   }
 
   export let features: Feature[] = [
@@ -17,7 +18,7 @@
       title: 'Комплексная или выборочная проверка контрагентов',
       description:
         'Проверерим финансовое состояние, репутацию, правовую и налоговую историю, судебные разбирательства и другие факторы',
-      higlighted: true
+      accent: 1
     },
     { title: 'Анализ и решение вопросов, связанных с безопасностью предприятия' },
     {
@@ -29,7 +30,8 @@
       title:
         'Анализ и проверка чистоты взаимоотношений со штатными сотрудниками предприятия (скрытая коммерческая мотивация, промышленный шпионаж)',
       description:
-        'Проанализируем их благонадёжности, фин. документации, кредитной истории, отзывов, установление учредителей, бенефициаров, аффилированных лиц.'
+        'Проанализируем их благонадёжности, фин. документации, кредитной истории, отзывов, установление учредителей, бенефициаров, аффилированных лиц.',
+      accent: 2
     },
     {
       title: 'Взаимодействие с правоохранительными и государственными органами по вопросам защиты интересов предприятия'
@@ -47,6 +49,10 @@
   ];
 
   const sectionsBallProps = getContext('BallProps') as Record<string, BallStyle>;
+
+  const getCardVariant = (feature: Feature): CardAccent => {
+    return feature.accent ? (`accent-${feature.accent}` as CardAccent) : 'normal';
+  };
 </script>
 
 <AppSection id="services" ballProps={sectionsBallProps.services}>
@@ -59,7 +65,7 @@
       </div>
       {#each features as feature}
         <article class="text-[22px] md:text-base max-w-[300px] md:max-w-auto">
-          <AppCard variant={feature.higlighted ? 'outlined' : 'normal'} className="hover:bg-ui-blue card flex md:block">
+          <AppCard variant={getCardVariant(feature)} className="flex md:block">
             <slot name="header">
               <Bullet />
             </slot>

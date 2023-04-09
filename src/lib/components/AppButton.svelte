@@ -6,7 +6,7 @@
   export let disabled: boolean = false;
   export let className: string = '';
 
-  $: classes = `inline-flex items-center justify-center font-medium focus:outline-none px-8 py-6 uppercase border-2 
+  $: classes = `inline-flex items-center justify-center font-medium focus:outline-none px-8 py-6 uppercase border-2 tracking-[-0.08em] 
       ${rounded ? ' rounded-full' : ''}
       ${disabled ? ' opacity-50 cursor-not-allowed' : ''}
       ${variant === 'normal' ? ` text-white bg-${color} active:${color}-darker hover:${color}-darker ` : ''}

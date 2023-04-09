@@ -20,15 +20,15 @@
 
   const ballPropsSections: Record<string, BallStyle> = {
     stats: {
-      left: '100px',
+      left: '-12vw',
       bottom: '30px',
       background: 'radial-gradient(47.03% 49.47% at 56.72% 63.26%, #0BFE5E 0%, #0BFEE1 100%)',
-      scale: '0.8',
+      scale: '0.78',
       endTrigger: '#clients'
     },
 
     services: {
-      left: '100px',
+      left: '-12vw',
       bottom: '30px',
       background: 'radial-gradient(47.03% 49.47% at 56.72% 63.26%, #0b23fe 0%, #0b99fe 100%)',
       scale: '0.8',
@@ -37,9 +37,9 @@
 
     contacts: {
       left: 'calc(50% - 25vw)',
-      bottom: '-10vh',
+      bottom: '-25vw',
       background: 'radial-gradient(47.03% 49.47% at 56.72% 63.26%, #FE0B1A 0%, #FE0B45 100%)',
-      scale: '0.8'
+      scale: '0.75'
     }
   };
 

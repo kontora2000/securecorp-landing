@@ -1,8 +1,10 @@
 <script lang="ts">
+  import type { CardAccent } from '$lib/types/CardVariant';
+
   export let className: string = '';
   export let clickable: boolean = false;
 
-  export let variant: 'normal' | 'outlined' = 'normal';
+  export let variant: CardAccent;
 
   $: classes = `
     rounded-2xl 
@@ -10,7 +12,8 @@
     transition-colors
     duration-200 
     ease-in-out 
-    ${variant === 'outlined' ? 'border-2 border-white hover:border-transparent' : ''}
+    ${variant === 'accent-1' ? 'border-2 border-white hover:border-transparent' : ''}
+    ${variant === 'accent-2' ? 'bg-ui-blue' : ''}
     ${clickable ? 'cursor-pointer' : 'cursor-default'}
   ${className}`;
 </script>

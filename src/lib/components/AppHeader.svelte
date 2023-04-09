@@ -1,20 +1,16 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { smoothScroll, toggleOverflow } from '$lib/utils/dom';
+  import type { Link } from '$lib/types/Link';
   import { phone } from '$lib/constants/contacts';
 
   import AppLogo from '$lib/components/AppLogo.svelte';
   import AppContainer from '$lib/components/AppContainer.svelte';
-  import AppButton from './AppButton.svelte';
-
-  interface Link {
-    name: string;
-    href: string;
-  }
+  import AppButton from '$lib/components/AppButton.svelte';
 
   let links: Link[] = [
     { name: 'Задачи', href: '#tasks' },
-    { name: 'Услуги', href: '#services' },
+    { name: 'Услуги', href: '#features' },
     { name: 'Контакты', href: '#contacts' }
   ];
 
@@ -50,7 +46,7 @@
         {#each links as link}
           <a
             href={link.href}
-            class="font-medium text-white hover:text-ui-blue transition-colors"
+            class="font-medium text-white transition-colors p-2 hover:bg-white rounded-full hover:bg-ui-gray-dark"
             on:click={handleMenuLinkClick}
           >
             {link.name}
@@ -58,7 +54,7 @@
         {/each}
       </nav>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0 transition-colors">
-        <a href={`tel:${phone}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
+        <a href={`tel:${phone}`} class="whitespace-nowrap text-white font-medium hover:bg-ui-gray-dark">
           {phone}
         </a>
       </div>
@@ -105,7 +101,7 @@
         {/each}
       </nav>
       <AppButton color="black" className="w-full text-black relative bottom-0" variant="outlined">
-        Получить консультацию
+        Проконсультироваться
       </AppButton>
     </AppContainer>
   {/if}

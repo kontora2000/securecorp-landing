@@ -16,10 +16,7 @@ const config = {
       pages: 'build',
       assets: 'build',
       strict: false
-    }),
-    paths: {
-      base: ''
-    }
+    })
   }
 };
 
