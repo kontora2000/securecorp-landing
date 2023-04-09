@@ -1,6 +1,5 @@
 <script lang="ts">
-  import type { Link } from '$lib/types/Link';
-
+  import type { Link } from '../types/Link';
   export let link: Link;
 </script>
 

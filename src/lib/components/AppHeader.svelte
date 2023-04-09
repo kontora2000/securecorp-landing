@@ -1,12 +1,13 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import { smoothScroll, toggleOverflow } from '$lib/utils/dom';
-  import type { Link } from '$lib/types/Link';
+  import type { Link } from '../types/Link';
   import { phone } from '$lib/constants/contacts';
 
   import AppLogo from '$lib/components/AppLogo.svelte';
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppButton from '$lib/components/AppButton.svelte';
+  import AppHeaderLink from './AppHeaderLink.svelte';
 
   let links: Link[] = [
     { name: 'Задачи', href: '#tasks' },
@@ -43,20 +44,15 @@
         <AppLogo />
       </a>
       <nav class="hidden md:flex space-x-10">
-        {#each links as link}
-          <a
-            href={link.href}
-            class="font-medium text-white transition-colors p-2 hover:bg-white rounded-full hover:bg-ui-gray-dark"
-            on:click={handleMenuLinkClick}
-          >
-            {link.name}
-          </a>
+        {#each links as linkItem}
+          <AppHeaderLink link={linkItem} />
         {/each}
       </nav>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0 transition-colors">
         <a href={`tel:${phone}`} class="whitespace-nowrap text-white font-medium hover:bg-ui-gray-dark">
           {phone}
         </a>
+        <AppHeaderLink link={{ href: `tel:${phone}`, name: phone }} />
       </div>
       {#if !isMenuOpen}
         <div class="md:hidden ml-auto">
@@ -90,14 +86,8 @@
         </button>
       </div>
       <nav class="md:hidden flex flex-col mt-7" in:fade>
-        {#each links as link}
-          <a
-            href={link.href}
-            class="text-black font-mediu hover:text-ui-blue transition-colors mt-3"
-            on:click={handleMenuLinkClick}
-          >
-            {link.name}
-          </a>
+        {#each links as linkItem}
+          <AppHeaderLink link={linkItem} />
         {/each}
       </nav>
       <AppButton color="black" className="w-full text-black relative bottom-0" variant="outlined">
