@@ -13,6 +13,7 @@
     <div class="text-xs text-ui-gray-dark">
       © {year}, {companyName}
     </div>
+    <div>Данный сайт является демонстрацией, все детали вымышлены, совпадения случайны</div>
     <div class="text-xs text-ui-gray-dark">
       Разработала
       <a href={link} target="_blank" class="underline font-bold" rel="noopener noreferrer"> {authorName}</a>®
