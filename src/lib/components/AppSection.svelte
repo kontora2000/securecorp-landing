@@ -20,6 +20,11 @@
     const ballRef = document.querySelector('.ball');
     ScrollTrigger.create({
       trigger: sectionRef,
+      scrub: 1,
+
+      endTrigger: ballProps?.endTrigger || (sectionRef.nextElementSibling as HTMLElement),
+      end: 'top center',
+
       onEnter: () => {
         ballTween = gsap.to(ballRef, {
           ...ballProps

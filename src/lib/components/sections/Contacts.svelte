@@ -11,27 +11,29 @@
 
 <AppSection ballProps={sectionsBallProps.contacts} id="contacts">
   <AppContainer>
-    <div class="flex flex-col md:flex-row justify-between text-white">
-      <h1 class="shrink-1 mb-8 md:mb-0">Контактная информация</h1>
-      <div class="flex-1 md:ml-20 flex flex-col md:flex-row">
-        <div class="flex-1 flex flex-row items-center md:block">
-          <div class="text-[20px]">
+    <div class="flex flex-col lg:flex-row justify-between text-white">
+      <h1 class="shrink-1 mb-8 lg:mb-0">Контактная информация</h1>
+      <div class="flex-1 lg:ml-20 flex flex-col md:flex-row">
+        <div class="flex-1 flex flex-col md:flex-row md:items-center ju md:block">
+          <div class="text-md md:text-[20px]">
             <h3 class="text-ui-gray-dark mb-4">Телефон</h3>
             <a href={`tel:${phone}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
               {phone}
             </a>
           </div>
-          <div class="text-[20px] ml-auto md:ml-0 md:mt-12">
+          <div class="text-md mt-6 md:text-[20px] md:mt-12">
             <h3 class="text-ui-gray-dark ] mb-4">Эл. почта</h3>
             <a href={`mailto:${email}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
               {email}
             </a>
           </div>
         </div>
-        <div class="flex-1 mt-6 mb:mt-0">
-          <div class="text-[20px]">
+        <div class="flex-1 mt-6 md:mt-0 max-w-[100vw]">
+          <div class="text-md md:text-[20px]">
             <h3 class="text-ui-gray-dark mb-4">Офис</h3>
-            <div class="whitespace-nowrap font-medium hover:text-ui-blue non-italic text-white">
+            <div
+              class="whitespace-nowrap font-medium hover:text-ui-blue non-italic text-white max-w-[100vw] break-words"
+            >
               {address}
             </div>
             <div>с 10 до 19:00</div>

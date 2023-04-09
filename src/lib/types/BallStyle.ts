@@ -1,1 +1,1 @@
-export type BallStyle = Partial<CSSStyleDeclaration & { scale: string | number }>;
+export type BallStyle = Partial<CSSStyleDeclaration & { scale: string | number; endTrigger?: string }>;

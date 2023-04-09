@@ -51,19 +51,19 @@
 
 <AppSection id="services" ballProps={sectionsBallProps.services}>
   <AppContainer>
-    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="flex flex-col justify-center sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-x-[60px] lg:gap-x-6">
       <div class="col-span-2 md:col-span-2 lg:col-span-3">
         <h1 class="block md:max-w-[700px] text-[32px]">
           В процесс сопровождения клиента входит более 17 услуг различной направленности, в&nbsp;числе которых:
         </h1>
       </div>
       {#each features as feature}
-        <article>
-          <AppCard variant={feature.higlighted ? 'outlined' : 'normal'} className="hover:bg-ui-blue card">
+        <article class="text-[22px] md:text-base max-w-[300px] md:max-w-auto">
+          <AppCard variant={feature.higlighted ? 'outlined' : 'normal'} className="hover:bg-ui-blue card flex md:block">
             <slot name="header">
               <Bullet />
             </slot>
-            <h3 class="text-md mt-4 leading-6 max-w-[288px]">
+            <h3 class="text-md md:mt-4 leading-6 max-w-[288px]">
               {feature.title}
             </h3>
             <p slot="footer" class="mt-4 text-[#E3E8EE99] font-thin leading-5 hidden md:block">

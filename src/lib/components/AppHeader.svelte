@@ -84,7 +84,7 @@
   {#if isMenuOpen}
     <AppContainer className={'h-full w-full fixed top-0 left-0 bg-white py-6 block md:hidden'}>
       <div class="flex justify-between">
-        <a href="/" class="mr-[70px]">
+        <a href="/" class="mr-[70px] max-w-[185px] max-h-[28px]">
           <AppLogo />
         </a>
         <button class="text-black hover:text-ui-blue focus:outline-none" on:click={toggleMenu}>
