@@ -49,9 +49,6 @@
         {/each}
       </nav>
       <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0 transition-colors">
-        <a href={`tel:${phone}`} class="whitespace-nowrap text-white font-medium hover:bg-ui-gray-dark">
-          {phone}
-        </a>
         <AppHeaderLink link={{ href: `tel:${phone}`, name: phone }} />
       </div>
       {#if !isMenuOpen}
