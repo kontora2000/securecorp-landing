@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { BallStyle } from '$lib/types/BallStyle';
-  import { phone, email, address } from '$lib/constants/contacts';
+  import { phone, email, address, wa, telegram } from '$lib/constants/contacts';
   import { getContext } from 'svelte';
 
   import AppContainer from '$lib/components/AppContainer.svelte';
@@ -26,6 +26,21 @@
             <a href={`mailto:${email}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
               {email}
             </a>
+          </div>
+          <div class="text-md mt-6 md:text-[20px] md:mt-12">
+            <h3 class="text-ui-gray-dark mb-4">Мессенджеры и соцсети</h3>
+            <ul>
+              <li>
+                <a href={`wa.me?:${wa}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
+                  Whatsapp
+                </a>
+              </li>
+              <li class="mt-3">
+                <a href={`wa.me?:${telegram}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
+                  Telegram
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="flex-1 mt-6 md:mt-0 max-w-[100vw]">
