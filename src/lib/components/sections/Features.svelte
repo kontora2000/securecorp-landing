@@ -3,11 +3,10 @@
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
   import Bullet from '$lib/components/icons/BulletIcon.svelte';
-  import BulletWhite from '../icons/BulletWhite.svelte';
   import type { BallStyle } from '$lib/types/BallStyle';
   import type { CardAccent } from '$lib/types/CardVariant';
   import { getContext } from 'svelte';
-  import BulletIcon from '$lib/components/icons/BulletIcon.svelte';
+
 
   interface Feature {
     title: string;
@@ -70,7 +69,7 @@
           <AppCard variant={getCardVariant(feature)} className="flex md:block">
             <slot name="header">
               {#if feature.accent && feature.accent > 1}
-              <BulletWhite />
+              <Bullet color={"white"}/>
               {:else}
               <Bullet/>
               {/if}
