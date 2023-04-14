@@ -10,7 +10,7 @@
     <h2 class="text-md leading-6 font-bold md:max-w-[648px] max-w-300px mb-8 text-ui-black">
       И сориентируем по стоимости услуг
     </h2>
-    <AppButton color="ui-black mb-4">Проконсультироваться</AppButton>
+    <AppButton color="ui-black mb-4" className="hover:bg-ui-gray-darker active:bg-ui-gray-darker tracking-wide w-1/4">Проконсультироваться</AppButton>
     <img src="/bubles.svg" alt="bubles" class="relative bottom-0" />
   </AppCard>
 </AppContainer>

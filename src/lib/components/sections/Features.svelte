@@ -3,9 +3,11 @@
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
   import Bullet from '$lib/components/icons/BulletIcon.svelte';
+  import BulletWhite from '../icons/BulletWhite.svelte';
   import type { BallStyle } from '$lib/types/BallStyle';
   import type { CardAccent } from '$lib/types/CardVariant';
   import { getContext } from 'svelte';
+  import BulletIcon from '$lib/components/icons/BulletIcon.svelte';
 
   interface Feature {
     title: string;
@@ -67,14 +69,23 @@
         <article class="text-[22px] md:text-base max-w-[300px] md:max-w-auto">
           <AppCard variant={getCardVariant(feature)} className="flex md:block">
             <slot name="header">
-              <Bullet />
+              {#if feature.accent && feature.accent > 1}
+              <BulletWhite />
+              {:else}
+              <Bullet/>
+              {/if}
             </slot>
-            <h3 class="text-md md:mt-4 leading-6 max-w-[288px]">
+            <h3 class="text-md md:mt-4 leading-6 max-w-[288px] font-bold">
               {feature.title}
             </h3>
-            <p slot="footer" class="mt-4 text-[#E3E8EE99] font-thin leading-5 hidden md:block">
+            <p slot="footer" class="mt-4 text-[#E3E8EE99] leading-5 hidden md:block">
+              {#if feature.accent}
               {#if feature.description}
-                {feature.description}
+                <b class="text-white font-medium">{feature.description} </b>
+              {/if}
+              {:else}   {#if feature.description}
+              {feature.description}
+              {/if}
               {/if}
             </p>
           </AppCard>

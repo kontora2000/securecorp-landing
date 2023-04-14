@@ -12,7 +12,7 @@
     transition-colors
     duration-200 
     ease-in-out 
-    ${variant === 'accent-1' ? 'border-2 border-white hover:border-transparent' : ''}
+    ${variant === 'accent-1' ? 'border-2 border-white ' : ''}
     ${variant === 'accent-2' ? 'bg-ui-blue' : ''}
     ${clickable ? 'cursor-pointer' : 'cursor-default'}
   ${className}`;

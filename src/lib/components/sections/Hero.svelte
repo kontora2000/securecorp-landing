@@ -31,7 +31,7 @@
         <AppButton
           variant="outlined"
           color="white"
-          className="hover:bg-ui-blue active:bg-ui-blue hover:border-ui-blue w-full md:w-auto"
+          className="hover:bg-white active:bg-white  hover:text-black tracking-wide w-full md:w-auto "
         >
           Проконсультироваться
         </AppButton>

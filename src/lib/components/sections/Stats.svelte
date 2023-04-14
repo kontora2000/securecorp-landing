@@ -7,16 +7,18 @@
 
   interface StatsCard {
     title: string;
+    accent:string;
     content: string;
   }
 
   const cards: StatsCard[] = [
-    { title: '52', content: 'Предприятиям провели полный анализ текущей ситуации' },
-    { title: '94%', content: 'Случаев выявления наиболее слабых точек в целостной системе безопасности' },
+    { title: '52', accent:'Предприятиям', content: 'провели полный анализ текущей ситуации' },
+    { title: '94%', accent:'Cлучаев',  content: 'выявления наиболее слабых точек в целостной системе безопасности' },
     {
       title: '98,2%',
+      accent:'Вероятность', 
       content:
-        'Вероятность предотвращения рисков и угроз, возникающих в процессе экономической и финансово-хозяйственной деятельности предприятия'
+        'предотвращения рисков и угроз, возникающих в процессе экономической и финансово-хозяйственной деятельности предприятия'
     }
   ];
 
@@ -33,7 +35,7 @@
         {#each cards as card}
           <AppCard className="hover:bg-ui-green text-center md:text-left last-child:mb-0 mb-12">
             <h2 slot="header" class="text-6xl md:text-[80px] font-bold">{card.title}</h2>
-            <div class="font-bold text-white md:text-lg" slot="default">{card.content}</div>
+            <div class="font-medium text-white md:text-lg" slot="default"><strong class=font-bold>{card.accent}</strong>&nbsp;{card.content}</div>
           </AppCard>
         {/each}
       </div>
