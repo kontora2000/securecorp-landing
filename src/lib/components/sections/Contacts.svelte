@@ -31,16 +31,19 @@
             <h3 class="text-ui-gray-dark mb-4">Мессенджеры и соцсети</h3>
             <ul>
               <li>
-                <a href={`wa.me?:${wa}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
+                <a href={`https://wa.me/message/${wa}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
                   Whatsapp
                 </a>
               </li>
               <li class="mt-3">
-                <a href={`wa.me?:${telegram}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
+                <a
+                  href={`https://t.me/${telegram}`}
+                  class="whitespace-nowrap text-white font-medium hover:text-ui-blue"
+                >
                   Telegram
                 </a>
               </li>
-            </ul>
+            </ul>https://wa.me/message/FED5SVEW43T7D1
           </div>
         </div>
         <div class="flex-1 mt-6 md:mt-0 max-w-[100vw]">
