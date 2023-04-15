@@ -1,10 +1,12 @@
+<script> export let color = "#0B99FE"</script>
+
 <svg
   width="20"
   height="20"
   viewBox="0 0 20 20"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
-  class="mr-3 min-w-[20px] text-ui-blue transition-colors duration-200"
+  class="mr-3 min-w-[20px]  transition-colors duration-200"
 >
-  <circle cx="10" cy="10" r="10" fill="currentColor" />
+  <circle cx="10" cy="10" r="10" fill={color} />
 </svg>
