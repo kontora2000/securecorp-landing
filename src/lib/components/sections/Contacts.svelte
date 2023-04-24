@@ -61,11 +61,25 @@
                       social.flag = true;
                       toggleOverflow(true);
                     }}
-                    class="whitespace-nowrap text-white font-medium hover:text-ui-blue block"
+                    class="whitespace-nowrap text-white font-medium hover:text-ui-blue hidden sm:block"
                   >
                     {social.name}
                   </button>
                 </li>
+                <AppDialog bind:isOpened={social.flag}>
+                  <AppCard variant="normal" className="{social.background} relative {social.color} text-xl text-center"
+                    >Задайте ваш вопрос в <span class="font-semibold">{social.name}</span>
+                    <button
+                      on:click={() => {
+                        social.flag = false;
+                        toggleOverflow(false);
+                      }}
+                      class=" border-2 rounded-full px-2 py-1 border-transparent hover:text-black absolute top-[10px] right-[20px]"
+                      ><span class="text-xl">x</span></button
+                    >
+                    <img class="mt-3 rounded-xl" alt="qr" src={social.qr} />
+                  </AppCard>
+                </AppDialog>
               {/each}
             </ul>
           </div>

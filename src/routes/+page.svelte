@@ -41,16 +41,12 @@
     }
   };
 
-  let over = false;
-  over = false;
-
   setContext('BallProps', ballPropsSections);
 </script>
 
 <AppGridBackground />
 <AppHeader />
 <AppFloatingBall />
-<div id="teleport" />
 <main>
   <Hero />
   <Stats />
