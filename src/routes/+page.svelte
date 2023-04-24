@@ -4,7 +4,6 @@
   import type { BallStyle } from '$lib/types/BallStyle';
 
   import AppHeader from '$lib/components/AppHeader.svelte';
-  import Clients from '$lib/components/sections/Clients.svelte';
   import Hero from '$lib/components/sections/Hero.svelte';
   import Stats from '$lib/components/sections/Stats.svelte';
   import Consult from '$lib/components/sections/Consult.svelte';
@@ -12,7 +11,6 @@
   import AppFooter from '$lib/components/AppFooter.svelte';
   import AppGridBackground from '$lib/components/AppGridBackground.svelte';
   import AppFloatingBall from '$lib/components/AppFloatingBall.svelte';
-
   import '../app.css';
   import Features from '$lib/components/sections/Features.svelte';
 
@@ -43,16 +41,19 @@
     }
   };
 
+  let over = false;
+  over = false;
+
   setContext('BallProps', ballPropsSections);
 </script>
 
 <AppGridBackground />
 <AppHeader />
 <AppFloatingBall />
+<div id="teleport" />
 <main>
   <Hero />
   <Stats />
-  <Clients />
   <Features />
   <Consult />
   <Contacts />
