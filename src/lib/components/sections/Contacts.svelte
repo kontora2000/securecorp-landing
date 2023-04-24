@@ -13,22 +13,6 @@
 
 <AppSection ballProps={sectionsBallProps.contacts} id="contacts">
   <AppContainer>
-    {#each socials as social}
-      <AppDialog bind:isOpened={social.flag}>
-        <AppCard variant="normal" className="{social.background} relative {social.color} text-xl text-center"
-          >Задайте ваш вопрос в <span class="font-semibold">{social.name}</span>
-          <button
-            on:click={() => {
-              social.flag = false;
-              toggleOverflow(false);
-            }}
-            class=" border-2 rounded-full px-2 py-1 border-transparent hover:text-black absolute top-[10px] right-[20px]"
-            ><span class="text-xl">x</span></button
-          >
-          <img class="mt-3 rounded-xl" alt="qr" src={social.qr} />
-        </AppCard>
-      </AppDialog>
-    {/each}
     <div class="flex flex-col lg:flex-row justify-between text-white">
       <h1 class="shrink-1 mb-8 lg:mb-0">Контактная информация</h1>
       <div class="flex-1 lg:ml-20 flex flex-col md:flex-row">
