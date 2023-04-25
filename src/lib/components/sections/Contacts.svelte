@@ -35,7 +35,7 @@
               {#each socials as social}
                 <li class="mb-3 last:mb-0">
                   <a
-                    href={`https://wa.me/message/${social.link}`}
+                    href={social.link}
                     class="whitespace-nowrap text-white font-medium hover:text-ui-blue block sm:hidden"
                   >
                     {social.name}
@@ -51,7 +51,9 @@
                   </button>
                 </li>
                 <AppDialog bind:isOpened={social.flag}>
-                  <AppCard variant="normal" className="{social.background} relative {social.color} text-xl text-center"
+                  <AppCard
+                    variant="normal"
+                    className="{social.background} flex flex-col items-center relative {social.color} text-xl text-center"
                     >Задайте ваш вопрос в <span class="font-semibold">{social.name}</span>
                     <button
                       on:click={() => {
@@ -61,7 +63,19 @@
                       class=" border-2 rounded-full px-2 py-1 border-transparent hover:text-black absolute top-[10px] right-[20px]"
                       ><span class="text-xl">x</span></button
                     >
-                    <img class="mt-3 rounded-xl" alt="qr" src={social.qr} />
+                    <figure class="mt-3 text-center rounded-xl">
+                      <img class=" m-auto rounded-xl max-w-[335px] max-h-[372px] mb-3" alt="qr" src={social.qr} />
+                      <figcaption class="max-w-lg">
+                        Просканируйте QR-код, чтобы открыть <span class="font-semibold">{social.name}</span> в&nbsp;телефоне,
+                        либо нажмите кнопку ниже, чтобы&nbsp;открыть чат здесь
+                      </figcaption>
+                    </figure>
+                    <a
+                      href={social.link}
+                      class="whitespace-nowrap block mt-3 border-2 bg-white rounded-xl max-w-md p-4 font-medium hover:font-semibold hover:shadow"
+                    >
+                      Написать в {social.name}
+                    </a>
                   </AppCard>
                 </AppDialog>
               {/each}
