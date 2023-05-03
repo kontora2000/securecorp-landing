@@ -1,10 +1,12 @@
 <script lang="ts">
   import type { BallStyle } from '$lib/types/BallStyle';
-  import { phone, email, address, wa, telegram } from '$lib/constants/contacts';
+  import { phone, email, address, socials } from '$lib/constants/contacts';
   import { getContext } from 'svelte';
-
   import AppContainer from '$lib/components/AppContainer.svelte';
   import AppSection from '$lib/components/AppSection.svelte';
+  import AppDialog from '../AppDialog.svelte';
+  import AppCard from '../AppCard.svelte';
+  import { toggleOverflow } from '$lib/utils/dom';
 
   const sectionsBallProps = getContext('BallProps') as Record<string, BallStyle>;
 </script>
@@ -30,20 +32,54 @@
           <div class="text-md mt-6 md:text-[20px] md:mt-12">
             <h3 class="text-ui-gray-dark mb-4">Мессенджеры и соцсети</h3>
             <ul>
-              <li>
-                <a href={`https://wa.me/message/${wa}`} class="whitespace-nowrap text-white font-medium hover:text-ui-blue">
-                  Whatsapp
-                </a>
-              </li>
-              <li class="mt-3">
-                <a
-                  href={`https://t.me/${telegram}`}
-                  class="whitespace-nowrap text-white font-medium hover:text-ui-blue"
-                >
-                  Telegram
-                </a>
-              </li>
-            </ul>https://wa.me/message/FED5SVEW43T7D1
+              {#each socials as social}
+                <li class="mb-3 last:mb-0">
+                  <a
+                    href={social.link}
+                    class="whitespace-nowrap text-white font-medium hover:text-ui-blue block sm:hidden"
+                  >
+                    {social.name}
+                  </a>
+                  <button
+                    on:click={() => {
+                      social.flag = true;
+                      toggleOverflow(true);
+                    }}
+                    class="whitespace-nowrap text-white font-medium hover:text-ui-blue hidden sm:block"
+                  >
+                    {social.name}
+                  </button>
+                </li>
+                <AppDialog bind:isOpened={social.flag}>
+                  <AppCard
+                    variant="normal"
+                    className="{social.background} flex flex-col items-center relative {social.color} text-xl text-center"
+                    >Задайте ваш вопрос в <span class="font-semibold">{social.name}</span>
+                    <button
+                      on:click={() => {
+                        social.flag = false;
+                        toggleOverflow(false);
+                      }}
+                      class=" border-2 rounded-full px-2 py-1 border-transparent hover:text-black absolute top-[10px] right-[20px]"
+                      ><span class="text-xl">x</span></button
+                    >
+                    <figure class="mt-3 text-center rounded-xl">
+                      <img class=" m-auto rounded-xl max-w-[335px] max-h-[372px] mb-3" alt="qr" src={social.qr} />
+                      <figcaption class="max-w-lg">
+                        Просканируйте QR-код, чтобы открыть <span class="font-semibold">{social.name}</span> в&nbsp;телефоне,
+                        либо нажмите кнопку ниже, чтобы&nbsp;открыть чат здесь
+                      </figcaption>
+                    </figure>
+                    <a
+                      href={social.link}
+                      class="whitespace-nowrap block mt-3 border-2 bg-white rounded-xl max-w-md p-4 font-medium hover:font-semibold hover:shadow"
+                    >
+                      Написать в {social.name}
+                    </a>
+                  </AppCard>
+                </AppDialog>
+              {/each}
+            </ul>
           </div>
         </div>
         <div class="flex-1 mt-6 md:mt-0 max-w-[100vw]">
@@ -54,7 +90,7 @@
             >
               {address}
             </div>
-            <div>с 10 до 19:00</div>
+            <div>с&nbsp;10 до 19:00</div>
           </div>
         </div>
       </div>
